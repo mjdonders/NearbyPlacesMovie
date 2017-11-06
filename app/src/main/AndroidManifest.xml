@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="aadcapstone.coursera.org.nearbyplacesmovie">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".provider.LocationTypeProvider"
+            android:authorities="aadcapstone.coursera.org.nearbyplacesmovie.provider"
+            android:exported="false" />
+
+        <service
+            android:name=".service.SettingsService"
+            android:exported="false" />
+
+        <activity
+            android:name=".LocationSelectionActivity"
+            android:label="@string/title_activity_location_selection"
+            android:parentActivityName=".WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="aadcapstone.coursera.org.nearbyplacesmovie.WelcomeActivity" />
+        </activity>
+
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
